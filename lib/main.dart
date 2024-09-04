@@ -1,9 +1,15 @@
+import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/views/chat_view.dart';
 import 'package:chat_app/views/sign_in_view.dart';
 import 'package:chat_app/views/sign_up_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const ScholarApp());
 }
 
@@ -20,7 +26,7 @@ class ScholarApp extends StatelessWidget {
       routes: {
         SignInView.route: (context) => const SignInView(),
         SignUpView.route: (context) => const SignUpView(),
-        ChatView.route : (context) => const ChatView(),
+        ChatView.route: (context) => const ChatView(),
       },
       initialRoute: SignInView.route,
     );

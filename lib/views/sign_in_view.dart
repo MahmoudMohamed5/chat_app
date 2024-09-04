@@ -1,4 +1,5 @@
 import 'package:chat_app/utils/constants.dart';
+import 'package:chat_app/views/chat_view.dart';
 import 'package:chat_app/views/sign_up_view.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_form_field.dart';
@@ -61,7 +62,9 @@ class _SignInViewState extends State<SignInView> {
             //3. Custom Button for Login
             CustomButton(
               title: SignInView.route,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, ChatView.route);
+              },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

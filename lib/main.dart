@@ -1,4 +1,5 @@
 import 'package:chat_app/views/sign_in_view.dart';
+import 'package:chat_app/views/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class ScholarApp extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.dark),
       routes: {
         SignInView.route: (context) => const SignInView(),
+        SignUpView.route: (context) => const SignUpView(),
       },
       initialRoute: SignInView.route,
     );

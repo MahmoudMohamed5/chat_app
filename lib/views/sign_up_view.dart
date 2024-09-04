@@ -1,18 +1,17 @@
 import 'package:chat_app/utils/constants.dart';
-import 'package:chat_app/views/sign_up_view.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class SignInView extends StatefulWidget {
-  const SignInView({super.key});
-  static const route = 'Sign In';
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
+  static const route = 'Sign Up';
 
   @override
-  State<SignInView> createState() => _SignInViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _SignInViewState extends State<SignInView> {
+class _SignUpViewState extends State<SignUpView> {
   bool obscureText = false;
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class _SignInViewState extends State<SignInView> {
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                SignInView.route,
+                SignUpView.route,
                 style: TextStyle(
                   fontSize: 24,
                 ),
@@ -60,7 +59,7 @@ class _SignInViewState extends State<SignInView> {
             const SizedBox(height: 20),
             //3. Custom Button for Login
             CustomButton(
-              title: SignInView.route,
+              title: SignUpView.route,
               onPressed: () {},
             ),
             Row(
@@ -70,7 +69,7 @@ class _SignInViewState extends State<SignInView> {
                 //4. Custom Button for Sign Up
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, SignUpView.route);
+                    Navigator.pop(context);
                   },
                   child: const Text('Sign Up'),
                 )

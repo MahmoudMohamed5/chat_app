@@ -12,12 +12,13 @@ class ScholarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Scholar App',
+      theme: ThemeData(brightness: Brightness.dark),
       routes: {
-        SignInView.route : (context) => const SignInView(),
+        SignInView.route: (context) => const SignInView(),
       },
-    
-      initialRoute:  SignInView.route,
+      initialRoute: SignInView.route,
     );
   }
 }

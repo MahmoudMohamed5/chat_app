@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class ChatView extends StatelessWidget {
   const ChatView({super.key});
   static const route = 'chat_view';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +27,11 @@ class ChatView extends StatelessWidget {
                 shape: CircleBorder(),
                 color: AppColors.backgroundLightColor,
               ),
-              child: const Text(
-                'DE',
-                style: TextStyle(
+              child: Text(
+                (ModalRoute.of(context)!.settings.arguments as String)
+                    .substring(0, 2)
+                    .toUpperCase(),
+                style: const TextStyle(
                   color: AppColors.primaryColor,
                   fontWeight: FontWeight.bold,
                 ),
